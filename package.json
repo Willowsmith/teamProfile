@@ -1,0 +1,26 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Willowsmith/teamProfile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Willowsmith/teamProfile/issues"
+  },
+  "homepage": "https://github.com/Willowsmith/teamProfile#readme",
+  "dependencies": {
+    "jest": "^27.3.0"
+  }
+}
