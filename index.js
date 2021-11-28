@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 
 
+
 const html = require("./util/generateHtml");
 
 
@@ -9,10 +10,10 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-const empArr = [];
-const manArr = [];
-const engArr = [];
-const intArr = [];
+const employeeA = [];
+const managerA = [];
+const engineerA = [];
+const internA = [];
 
 
 
@@ -21,7 +22,7 @@ function askQuestion() {
         {
             name: "question",
             type: "list",
-            choices: ["Engineer", "Manager", "Intern"]
+            choices: ["Engineer", "Manager", "Intern", "Team Complete!"]
         }
     ]).then(answers => {
         switch (answers.question) {
@@ -39,7 +40,7 @@ function askQuestion() {
                 break;
             default:
                 console.log('Go Team!');
-                fs.writeFile(`Team.html`, html(empArr), (err) =>
+                fs.writeFile(`Team.html`, html(employeeA), (err) =>
                 err ? console.error(err) : console.log('HTML Created!')
                 );
         }
@@ -67,9 +68,9 @@ function engineer() {
         }
     ]).then(engAnswers => {
         const myEngineer = new Engineer(engAnswers.engName, engAnswers.engId, engAnswers.engEmail, engAnswers.engGitHub);
-        empArr.push(myEngineer);
-        engArr.push(myEngineer);
-        askEngInt();
+        employeeA.push(myEngineer);
+        engineerA.push(myEngineer);
+        askQuestion();
     })
 
 }
@@ -95,9 +96,9 @@ function manager() {
         }
     ]).then(manAnswers => {
         const myManager = new Manager(manAnswers.manName, manAnswers.manId, manAnswers.manEmail, manAnswers.manOffice);
-        empArr.push(myManager);
-        manArr.push(myManager);
-        askEngInt();
+        employeeA.push(myManager);
+        managerA.push(myManager);
+        askQuestion();
     })
 }
 
@@ -122,10 +123,10 @@ function intern() {
         }
     ]).then(intAnswers => {
         const myIntern = new Intern(intAnswers.intName, intAnswers.intId, intAnswers.intEmail, intAnswers.intSchool);
-        empArr.push(myIntern);
-        intArr.push(myIntern);
-        askEngInt();
+        employeeA.push(myIntern);
+        internA.push(myIntern);
+        askQuestion();
     })
 }
 
-newEmp();
+askQuestion();

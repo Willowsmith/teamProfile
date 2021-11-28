@@ -1,26 +1,29 @@
 {
-  "name": "profile",
+  "name": "teamProfile",
   "version": "1.0.0",
-  "description": "",
+  "description": "-My motivation was to create code that allows a user to launch a website showing their team using the console to input the data.\r -I built this project so that I could learn how to create team profile website utilizing express and node as well as writing code to pass tests.\r -The problem that I solved were the display of data, making sure the tests passed, and that the information was correctly displayed.\r -I learned about TDD, express, and node.",
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Willowsmith/teamProfile.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Willowsmith/teamProfile/issues"
   },
-  "homepage": "https://github.com/Willowsmith/teamProfile#readme",
-  "dependencies": {
-    "jest": "^27.3.0"
-  }
+  "homepage": "https://github.com/Willowsmith/teamProfile#readme"
 }
